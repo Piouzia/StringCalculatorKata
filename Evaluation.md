@@ -17,9 +17,10 @@ A LA FIN DU TP: pensez à pousser vos commits sur votre compte GitHub et envoyer 
 Réponses aux questions posées
 -----------------------------
 
-Q1) Pour éviter une suite de if ou un switch il faut utiliser un dictionnaire qui associe les données nécessaires.
+Q1) Pour éviter une suite de if ou un switch il faut utiliser un dictionnaire qui 
+associe les données nécessaires.
 
-Q2)
+Q2) C'est le fait d'utiliser des fonctions qui appartiennent à une classe (ici addition, soustraction, multiplication, division).
 
 Q3)
 

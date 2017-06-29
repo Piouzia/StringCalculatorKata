@@ -6,8 +6,6 @@ namespace SolidExercices
 {
     public class Calculator
     {
-        private List<decimal> _numbers = new List<decimal>();
-
         public decimal Calculate(string operation)
         {
             var operateurs = new Dictionary<char, Func<decimal, decimal, decimal>>()
@@ -17,18 +15,28 @@ namespace SolidExercices
                 {'x', Multiplication},
                 {'/', Division}
             };
-            decimal result = 0;
 
+            decimal result = 0;
             foreach (var item in operateurs)
             {
                 if (operation.IndexOf(item.Key) != -1)
                 {
+                    
                     String[] op = operation.Split(item.Key);
+                    bool firstElement = true;
                     foreach (string t in op)
                     {
-                        result = item.Value(result,decimal.Parse(t));
+                        if (firstElement)
+                        {
+                            result = decimal.Parse(t);
+                            firstElement = false;
+                        }
+                        else
+                        {
+                            result = item.Value(result, decimal.Parse(t));
+                        }
+                        
                     }
-
                     return result;
                 }
             }
