@@ -7,7 +7,7 @@ namespace SolidExercices
 {
     public class Calculator
     {
-        private Operators _operators;
+        private readonly Operators _operators;
 
         public Calculator(Operators operators)
         {

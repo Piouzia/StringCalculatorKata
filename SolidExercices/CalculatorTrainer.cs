@@ -8,13 +8,17 @@ namespace SolidExercices
 {
     public class CalculatorTrainer
     {
-        private readonly string[] _operations = new[]
-            {"1+2,3", "2 x 3,6", "6-1-3,8", "6,6/3", "6/0", "not an operation", "a+1", "12", ""};
+        private readonly OperationGenerator _operations;
+
+        public CalculatorTrainer(OperationGenerator op)
+        {
+            _operations = op;
+        }
 
         public void Run()
         {
             var calculator = new Calculator(new Operators());
-            foreach (var operation in _operations)
+            foreach (var operation in _operations.Operations)
             {
                 try
                 {

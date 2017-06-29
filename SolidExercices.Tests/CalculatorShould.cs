@@ -11,8 +11,12 @@ namespace SolidExercices.Tests
             var calculator = new Calculator(new Operators());
             var result = calculator.Calculate("1+2,3");
             Check.That(result).IsEqualTo(3.3m);
+        }
 
-            result = calculator.Calculate("1+2,3+3+0,5");
+        public void CalculateMultipleSum()
+        {
+            var calculator = new Calculator(new Operators());
+            var result = calculator.Calculate("1+2,3+3+0,5");
             Check.That(result).IsEqualTo(6.8m);
         }
 
