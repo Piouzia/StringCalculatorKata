@@ -7,22 +7,19 @@ namespace SolidExercices
 {
     public class Calculator
     {
+        private Operators _operators;
+        public Calculator(Operators operators)
+        {
+            this._operators = operators;
+        }
         public decimal Calculate(string operation)
         {
-            var operateurs = new Dictionary<char, Func<decimal, decimal, decimal>>()
-            {
-                {'+', Addition},
-                {'-', Soustraction},
-                {'x', Multiplication},
-                {'/', Division}
-            };
 
             decimal result = 0;
-            foreach (var item in operateurs)
+            foreach (var item in _operators.Operateurs)
             {
-                if (operation.IndexOf(item.Key) != -1)
+                if (operation.Contains(item.Key))
                 {
-                    
                     String[] op = operation.Split(item.Key);
                     bool firstElement = true;
                     foreach (string t in op)
@@ -42,26 +39,6 @@ namespace SolidExercices
                 }
             }
             return result;
-        }
-
-        decimal Addition(decimal a, decimal b)
-        {
-            return a + b;
-        }
-
-        decimal Soustraction(decimal a, decimal b)
-        {
-            return a - b;
-        }
-
-        decimal Multiplication(decimal a, decimal b)
-        {
-            return a * b;
-        }
-
-        decimal Division(decimal a, decimal b)
-        {
-            return a / b;
         }
     }
 }

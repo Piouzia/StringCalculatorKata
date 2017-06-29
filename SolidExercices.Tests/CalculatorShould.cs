@@ -8,9 +8,12 @@ namespace SolidExercices.Tests
         [Test]
         public void CalculateASum()
         {
-            var calculator = new Calculator();
+            var calculator = new Calculator(new Operators());
             var result = calculator.Calculate("1+2,3");
             Check.That(result).IsEqualTo(3.3m);
+
+            result = calculator.Calculate("1+2,3+3+0,5");
+            Check.That(result).IsEqualTo(6.8m);
 
             result = calculator.Calculate("3-2,3");
             Check.That(result).IsEqualTo(0.7m);

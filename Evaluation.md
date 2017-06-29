@@ -20,7 +20,7 @@ Réponses aux questions posées
 Q1) Pour éviter une suite de if ou un switch il faut utiliser un dictionnaire qui 
 associe les données nécessaires.
 
-Q2) C'est le fait d'utiliser des fonctions qui appartiennent à une classe (ici addition, soustraction, multiplication, division).
+Q2) C'est le fait que chaque classe a connaissance d'un minimum de chose, chaque classe a un trvail bien défini et ne doit pas avoir conaissance du reste.
 
 Q3)
 
