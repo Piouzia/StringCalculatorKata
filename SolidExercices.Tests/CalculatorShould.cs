@@ -14,14 +14,26 @@ namespace SolidExercices.Tests
 
             result = calculator.Calculate("1+2,3+3+0,5");
             Check.That(result).IsEqualTo(6.8m);
+        }
 
-            result = calculator.Calculate("3-2,3");
+        public void CalculateASub()
+        {
+            var calculator = new Calculator(new Operators());
+            var result = calculator.Calculate("3-2,3");
             Check.That(result).IsEqualTo(0.7m);
+        }
 
-            result = calculator.Calculate("2x3");
+        public void CalculateAMul()
+        {
+            var calculator = new Calculator(new Operators());
+            var result = calculator.Calculate("2x3");
             Check.That(result).IsEqualTo(6m);
+        }
 
-            result = calculator.Calculate("10/2");
+        public void CalculateADiv()
+        {
+            var calculator = new Calculator(new Operators());
+            var result = calculator.Calculate("10/2");
             Check.That(result).IsEqualTo(5m);
         }
     }
