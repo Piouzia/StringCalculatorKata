@@ -7,11 +7,33 @@ namespace SolidExercices
     {
         public decimal Calculate(string operation)
         {
+            char[] operateurs = { '+', '-', 'x', '/'};
             decimal result = 0;
-            String[] op = operation.Split('+');
-            foreach (string t in op)
+
+            foreach (char c in operateurs)
             {
-                result += decimal.Parse(t);
+                if (operation.IndexOf(c) != -1)
+                {
+                    String[] op = operation.Split(c);
+                    foreach (string t in op)
+                    {
+                        switch (c)
+                        {
+                            case '+':
+                                result += decimal.Parse(t);
+                                break;
+                            case '-':
+                                result -= decimal.Parse(t);
+                                break;
+                            case 'x':
+                                result *= decimal.Parse(t);
+                                break;
+                            case '/':
+                                result /= decimal.Parse(t);
+                                break;
+                        }
+                    }
+                }
             }
             return result;
         }
