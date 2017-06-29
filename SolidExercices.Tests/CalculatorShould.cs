@@ -10,7 +10,7 @@ namespace SolidExercices.Tests
         {
             var calculator = new Calculator();
             var result = calculator.Calculate("1+2,3");
-            Check.That(result).IsEqualTo(3.3);
+            Check.That(result).IsEqualTo(3.3m);
         }
     }
 }

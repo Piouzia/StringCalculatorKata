@@ -5,9 +5,15 @@ namespace SolidExercices
 {
     public class Calculator
     {
-        public double Calculate(string operation)
+        public decimal Calculate(string operation)
         {
-            throw new NotImplementedException();
+            decimal result = 0;
+            String[] op = operation.Split('+');
+            foreach (string t in op)
+            {
+                result += decimal.Parse(t);
+            }
+            return result;
         }
     }
 }
