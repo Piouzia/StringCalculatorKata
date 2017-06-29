@@ -8,13 +8,14 @@ namespace SolidExercices
     public class Calculator
     {
         private Operators _operators;
+
         public Calculator(Operators operators)
         {
             this._operators = operators;
         }
+
         public decimal Calculate(string operation)
         {
-
             decimal result = 0;
             foreach (var item in _operators.Operateurs)
             {
@@ -26,16 +27,22 @@ namespace SolidExercices
                     {
                         if (firstElement)
                         {
-                            result = decimal.Parse(t);
+                            try
+                            {
+                                result = decimal.Parse(t);;
+                            }
+                            catch (FormatException exFormat)
+                            {
+                                throw new ArgumentException("Erreur : mauvais format.");
+                            }
+                            
                             firstElement = false;
                         }
                         else
                         {
                             result = item.Value(result, decimal.Parse(t));
                         }
-                        
                     }
-                    
                 }
             }
             return result;

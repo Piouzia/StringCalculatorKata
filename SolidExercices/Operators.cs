@@ -37,7 +37,14 @@ namespace SolidExercices
 
         static decimal Division(decimal a, decimal b)
         {
-            return a / b;
+            try
+            {
+                return a / b;
+            }
+            catch (DivideByZeroException dZero)
+            {
+                throw new ArgumentException("Erreur : division par zéro.");
+            }
         }
     }
 }

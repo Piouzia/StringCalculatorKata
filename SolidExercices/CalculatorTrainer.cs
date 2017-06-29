@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SolidExercices
 {
@@ -9,7 +13,7 @@ namespace SolidExercices
 
         public void Run()
         {
-            var calculator = new Calculator();
+            var calculator = new Calculator(new Operators());
             foreach (var operation in _operations)
             {
                 try
@@ -22,6 +26,7 @@ namespace SolidExercices
                     Console.WriteLine("ERROR: " + e.Message);
                 }
             }
+            Console.ReadKey();
         }
     }
 }

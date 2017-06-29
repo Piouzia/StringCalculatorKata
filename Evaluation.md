@@ -22,7 +22,7 @@ associe les données nécessaires.
 
 Q2) C'est le fait que chaque classe a connaissance d'un minimum de chose, chaque classe a un trvail bien défini et ne doit pas avoir conaissance du reste.
 
-Q3)
+Q3) Cela correspond donc au D de SOLID : Dependency Inversion Principle.
 
 Q4)
 
